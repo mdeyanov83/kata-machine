@@ -12,7 +12,11 @@ export default function two_crystal_balls(breaks: boolean[]): number {
 
     i -= jmpAmount;
 
-    for (let j = 0; j < jmpAmount && i < breaks.length; j++) {
-
+    for (let j = 0; j < jmpAmount && i < breaks.length; ++j, ++i) {
+        if (breaks[i]) {
+            return i;
+        }
     }
+
+    return -1;
 }
