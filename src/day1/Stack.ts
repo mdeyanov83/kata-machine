@@ -5,7 +5,7 @@ type Node<T> = {
 
 export default class Stack<T> {
     public length: number;
-    private: head?: Node<T>;
+    private head?: Node<T>;
 
     constructor() {
         this.head = undefined;
@@ -13,7 +13,7 @@ export default class Stack<T> {
     }
 
     push(item: T): void {
-        const node = {value: item} ad Node<T>;
+        const node = {value: item} as Node<T>;
 
         this.length++;
         if (!this.head) {
@@ -34,6 +34,10 @@ export default class Stack<T> {
         }
 
         const head = this.head as Node<T>;
+        this.head = head.prev;
+
+        // free
+        return head.value;
 
     }
     peek(): T | undefined {
