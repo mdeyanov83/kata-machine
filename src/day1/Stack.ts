@@ -13,7 +13,12 @@ export default class Stack<T> {
     }
 
     push(item: T): void {
-        
+        const node = {value: item} ad Node<T>;
+
+        this.length++;
+        if (!this.head) {
+            this.head =
+        }
     }
 
     pop(): T | undefined {
