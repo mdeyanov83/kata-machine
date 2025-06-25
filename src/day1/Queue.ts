@@ -18,6 +18,18 @@ export default class Queue<T> {
 
 }
     deque(): T | undefined {
+        if (!this.head) {
+            return undefined;
+        }
+
+        this.length--;
+        const head = this.head;
+        this.head = this.head.next;
+
+        //free, not needed in JS, as it has automatic garbage collection
+        head.next = undefined;
+
+        return head.value;
 
 }
     peek(): T | undefined {
