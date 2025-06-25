@@ -36,6 +36,9 @@ export default class Queue<T> {
 
         //free, not needed in JS due to automatic garbage collection
         head.next = undefined;
+        if (this.length === 0) {
+            this.tail = undefined;
+        }
 
         return head.value;
 }
