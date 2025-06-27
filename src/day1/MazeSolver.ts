@@ -21,6 +21,10 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
         return false;
     }
 
+    // 3 recurse
+    // pre
+    // recurse
+    // post
 
 
 }
