@@ -1,3 +1,10 @@
+const dir = [
+    [-1, 0],
+    [1, 0],
+    [0, -1],
+    [0, 1],
+]
+
 function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boolean[][], path: Point[]): boolean {
     // 1. Base Case
     // off the map
@@ -23,8 +30,20 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
 
     // 3 recurse
     // pre
+    path.push(curr);
+
     // recurse
+    for (let i = 0; i < dir.length; ++i) {
+        const [x,y] = dir[i];
+        walk(maze, wall, {
+            x: curr.x + x,
+            y: curr.y + y,
+        },)
+    }
+
     // post
+    path.pop();
+
 
 
 }
