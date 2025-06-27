@@ -47,9 +47,7 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
 
     // post recurse
     path.pop();
-
-
-
+    return false;
 }
 
 
@@ -64,5 +62,4 @@ export default function solve(maze: string[], wall: string, start: Point, end: P
     walk(maze, wall, start, end, seen, path);
 
     return path;
-
 }
