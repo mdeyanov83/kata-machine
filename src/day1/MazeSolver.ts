@@ -20,6 +20,7 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
 
     // reached the end
     if (curr.x === end.x && curr.y === end.y) {
+        path.push(end);
         return true;
     }
 
@@ -29,19 +30,21 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
     }
 
     // 3 recurse
-    // pre
+    // pre recurse
     path.push(curr);
 
     // recurse
     for (let i = 0; i < dir.length; ++i) {
         const [x,y] = dir[i];
-        walk(maze, wall, {
+        if (walk(maze, wall, {
             x: curr.x + x,
             y: curr.y + y,
-        },)
+        }, end, seen, path)) {
+            return true;
+        }
     }
 
-    // post
+    // post recurse
     path.pop();
 
 
