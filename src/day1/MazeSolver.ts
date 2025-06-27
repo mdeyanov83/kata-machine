@@ -1,4 +1,4 @@
-function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boolean[][]): boolean {
+function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boolean[][], path: Point[]): boolean {
     // 1. Base Case
     // off the map
     if (curr.x < 0 || curr.x >= maze[0].length ||
