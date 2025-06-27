@@ -31,6 +31,7 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
 
     // 3 recurse
     // pre recurse
+    seen[curr.y][curr.x] = true;
     path.push(curr);
 
     // recurse
@@ -52,8 +53,16 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
 }
 
 
-}
-
 export default function solve(maze: string[], wall: string, start: Point, end: Point): Point[] {
+    const seen: boolean[][] = [];
+    const path: Point[] = [];
+
+    for (let i = 0; i < maze.length; ++i) {
+        seen.push(new Array(maze[0].length).fill(false));
+    }
+
+    walk(maze, wall, start, end, seen, path);
+
+    return path;
 
 }
