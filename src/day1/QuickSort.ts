@@ -1,4 +1,5 @@
 function qs(arr: number[], lo: number, hi: number): void {
+
     if (lo >= hi) {
         return;
     }
@@ -7,7 +8,6 @@ function qs(arr: number[], lo: number, hi: number): void {
 
     qs(arr, lo, pivotIdx - 1);
     qs(arr, pivotIdx + 1, hi);
-
 }
 
 function partition(arr: number[], lo: number, hi: number): number {
