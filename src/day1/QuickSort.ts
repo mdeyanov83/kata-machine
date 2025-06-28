@@ -1,4 +1,12 @@
 function qs(arr: number[], lo: number, hi: number): void {
+    if (lo >= hi) {
+        return;
+    }
+
+    const pivotIdx = partition(arr, lo, hi);
+
+    qs(arr, lo, pivotIdx - 1);
+    qs(arr, pivotIdx + 1, hi);
 
 }
 
@@ -12,9 +20,14 @@ function partition(arr: number[], lo: number, hi: number): number {
             idx++;
             const tmp = arr[i];
             arr[i] = arr[idx];
-            arr[idx] = tmp; 
+            arr[idx] = tmp;
         }
     }
+    idx++;
+    arr[hi] = arr[idx]
+    arr[idx] = pivot;
+    return idx;
+
 }
 
 export default function quick_sort(arr: number[]): void {
