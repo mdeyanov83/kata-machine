@@ -10,7 +10,9 @@ function partition(arr: number[], lo: number, hi: number): number {
     for (let i = lo; i < hi; ++i) {
         if (arr[i] <= pivot) {
             idx++;
-            const tmp
+            const tmp = arr[i];
+            arr[i] = arr[idx];
+            arr[idx] = tmp;
         }
     }
 }
