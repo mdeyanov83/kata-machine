@@ -40,7 +40,7 @@ export default class DoublyLinkedList<T> {
 
         this.length++;
         const curr = this.getAt(idx) as Node<T>;
-        const node = {value: item} as Node<T>
+        const node = {value: item} as Node<T>;
 
         node.next = curr;
         node.prev = curr.prev;
