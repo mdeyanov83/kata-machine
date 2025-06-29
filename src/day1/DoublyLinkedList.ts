@@ -113,7 +113,22 @@ export default class DoublyLinkedList<T> {
         }
     }
 
-    private removeNode(node:)
+    private removeNode(node: Node<T>) T | undefined {
+        this.length--;
+        if (this.lenght === 0) {
+            const out = this.head?.value;
+            this.head = this.tail = undefined;
+            return out;
+        }
+
+        if (curr.prev) {
+            curr.prev = curr.next;
+        }
+
+        if (curr.next) {
+            curr.next = curr.prev;
+        }
+    }
 
     private getAt(idx: number): Node <T> | undefined {
 
