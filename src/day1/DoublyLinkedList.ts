@@ -19,7 +19,7 @@ export default class DoublyLinkedList<T> {
         const node = {value: item} as Node<T>;
         this.length++
         if (!this.head) {
-            this.head = node;
+            this.head = this.tail = node;
             return;
         }
         node.next = this.head;
@@ -57,9 +57,19 @@ export default class DoublyLinkedList<T> {
     }
 
     append(item: T): void {
+        const node = {value: item} as Node<T>;
+        this.length++
+
+        if (!this.head) {
+            this.head = this.tail = node;
+            return;
+        }
+        node.next = this.head;
+        this.head.prev = node;
+        this.head = node;
 
 
-}
+    }
     remove(item: T): T | undefined {
 
 }
