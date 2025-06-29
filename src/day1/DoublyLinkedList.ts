@@ -121,14 +121,19 @@ export default class DoublyLinkedList<T> {
             return out;
         }
 
-        if (curr.prev) {
-            curr.prev = curr.next;
+        if (node.prev) {
+            node.prev = node.next;
+        }
+        if (node.next) {
+            node.next = node.prev;
+        }
+        if (node === this.head) {
+            this.head = node.next;
+        }
+        if (node === this.tail) {
+            this.tail = node.prev;
         }
 
-        if (curr.next) {
-            curr.next = curr.prev;
-        }
-        
         node.prev = node.next = undefined;
         return node.value;
     }
