@@ -89,9 +89,9 @@ export default class DoublyLinkedList<T> {
         }
     }
 
-    private removeNode(node: Node<T>) T | undefined {
+    private removeNode(node: Node<T>): T | undefined {
         this.length--;
-        if (this.lenght === 0) {
+        if (this.length === 0) {
             const out = this.head?.value;
             this.head = this.tail = undefined;
             return out;
@@ -114,8 +114,8 @@ export default class DoublyLinkedList<T> {
         return node.value;
     }
 
-    private getAt(idx: number): Node <T> | undefined {
-        let curr = this.heat;
+    private getAt(idx: number): Node<T> | undefined {
+        let curr = this.head;
         for (let i = 0; curr && i < this.length; ++i) {
             curr = curr.next
         }
