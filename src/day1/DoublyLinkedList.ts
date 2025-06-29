@@ -114,8 +114,13 @@ export default class DoublyLinkedList<T> {
             curr = curr.next
         }
         return curr?.value;
-}
+    }
     removeAt(idx: number): T | undefined {
 
-}
+    }
+
+    private getAt(idx: number) {
+        
+    }
+
 }
