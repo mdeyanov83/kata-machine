@@ -81,7 +81,9 @@ export default class DoublyLinkedList<T> {
         if (!curr) {
             return;
         }
-         
+
+        
+
     }
 
     get(idx: number): T | undefined {
