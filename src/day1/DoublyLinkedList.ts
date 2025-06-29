@@ -22,7 +22,7 @@ export default class DoublyLinkedList<T> {
             out += '${i} = ${curr.value}';
             curr = curr?.next;
         }
-        console.logcurr);
+        console.log(curr);
     }
 
     prepend(item: T): void {
