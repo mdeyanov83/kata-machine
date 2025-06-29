@@ -128,6 +128,9 @@ export default class DoublyLinkedList<T> {
         if (curr.next) {
             curr.next = curr.prev;
         }
+        
+        node.prev = node.next = undefined;
+        return node.value;
     }
 
     private getAt(idx: number): Node <T> | undefined {
