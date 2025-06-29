@@ -79,11 +79,33 @@ export default class DoublyLinkedList<T> {
             curr = curr.next;
         }
         if (!curr) {
-            return;
+            return undefined;
         }
 
-        
+        this.length--;
 
+        if (this.length === 0) {
+            const out = this.head?.value
+            this.head = this.tail = undefined;
+            return out;
+        }
+
+        if (curr.prev) {
+            curr.prev = curr.next;
+        }
+        if (curr.next) {
+            curr.next = curr.prev;
+        }
+
+        if (curr === this.head) {
+            this.head = curr.next;
+        }
+        if (curr === this.tail) {
+            this.tail = curr.prev;
+        }
+
+        curr.prev = curr.next = undefined;
+        return curr.value;
     }
 
     get(idx: number): T | undefined {
