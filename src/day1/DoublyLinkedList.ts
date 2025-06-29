@@ -19,10 +19,10 @@ export default class DoublyLinkedList<T> {
         let curr = this.head;
         let out = "";
         for (let i = 0; curr && i < this.length; ++i) {
-            out += '${i} = ${curr.value}';
+            out += `${i} = ${curr.value} `;
             curr = curr?.next;
         }
-        console.log(curr);
+        console.log(out);
     }
 
     prepend(item: T): void {
