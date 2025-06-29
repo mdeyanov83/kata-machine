@@ -66,14 +66,14 @@ export default class DoublyLinkedList<T> {
         }
 
         node.prev = this.tail;
-        this.head.prev = node;
-        this.head = node;
-
-
+        this.tail.next = node;
+        this.tail = node;
     }
-    remove(item: T): T | undefined {
 
-}
+    remove(item: T): T | undefined {
+        
+    }
+
     get(idx: number): T | undefined {
         let curr = this.head;
         for (let i = 0; i < idx && curr; ++i) {
