@@ -18,7 +18,7 @@ export default class DoublyLinkedList<T> {
     private debug() {
         let curr = this.head;
         let out = "";
-        for (let = 0; curr && i < this.length; ++i) {
+        for (let i = 0; curr && i < this.length; ++i) {
             out += '${i} = ${curr.value}';
             curr = curr?.next;
         }
@@ -66,12 +66,14 @@ export default class DoublyLinkedList<T> {
 
         if (!this.tail) {
             this.head = this.tail = node;
+            this.debug();
             return;
         }
 
         node.prev = this.tail;
         this.tail.next = node;
         this.tail = node;
+        this.debug();
     }
 
     remove(item: T): T | undefined {
