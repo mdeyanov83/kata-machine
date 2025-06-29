@@ -5,13 +5,13 @@ function walk(curr: BinaryNode<number> | null, path: number[]): number[] {
 
     //recurse steps
     //pre
-    path.push(curr.value);
 
     //recurse
     walk(curr.left, path);
     walk(curr.right, path);
 
     //post
+    path.push(curr.value);
     return path;
 
 }
