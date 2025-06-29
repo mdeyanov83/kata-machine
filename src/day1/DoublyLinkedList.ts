@@ -60,11 +60,12 @@ export default class DoublyLinkedList<T> {
         const node = {value: item} as Node<T>;
         this.length++
 
-        if (!this.head) {
+        if (!this.tail) {
             this.head = this.tail = node;
             return;
         }
-        node.next = this.head;
+
+        node.prev = this.tail;
         this.head.prev = node;
         this.head = node;
 
