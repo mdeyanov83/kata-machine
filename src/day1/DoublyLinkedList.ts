@@ -87,6 +87,7 @@ export default class DoublyLinkedList<T> {
         if (!node) {
             return undefined;
         }
+        return this.removeNode(node);
     }
 
     private removeNode(node: Node<T>): T | undefined {
