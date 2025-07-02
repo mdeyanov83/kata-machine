@@ -18,10 +18,18 @@ function walk(Graph: WeightedAdjacencyList,
 
     // recurse
     const list = graph[curr];
+    for (let i = 0; i < list.length; ++i) {
+        const edge = list[i];
+        if (walk(Graph, edge.to, needle, seen, path)) {
+            path.push(edge.to);
+            return true;
+        }
+    }
 
 
     // post
     path.pop();
+    return false;
 
 
 }
