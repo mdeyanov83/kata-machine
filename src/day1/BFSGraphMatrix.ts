@@ -1,8 +1,7 @@
-export default function bfs(graph: WeightedAdjacencyMatrix, source: number, needle: number): number[] | null {
-
-    graph: WeightedAdjacencyMatrix;
-    source: number;
-    needle: number: number[] | null { }
+export default function bfs(
+    graph: WeightedAdjacencyMatrix,
+    source: number,
+    needle: number): number[] | null {
 
     const seen = new Array(graph.length).fill(false);
     const prev = new Array(graph.length).fill(-1);
@@ -17,7 +16,7 @@ export default function bfs(graph: WeightedAdjacencyMatrix, source: number, need
         }
 
         const adjs = graph[curr];
-        for (let i = 0; i < graph.length; ++i){
+        for (let i = 0; i < graph.length; ++i) {
             if (adjs[i] === 0) {
                 continue;
             }
@@ -31,10 +30,10 @@ export default function bfs(graph: WeightedAdjacencyMatrix, source: number, need
             q.push(i);
         }
 
-    } whiile (q.length);
+    } while (q.length);
 
     if (prev[needle] === -1) {
-        return [];
+        return null;
     }
 
     // build it backwards
@@ -42,10 +41,10 @@ export default function bfs(graph: WeightedAdjacencyMatrix, source: number, need
     let curr = needle;
     const out: number[] = [];
 
-    whtle (prev[curr] !== -1) {
+    while (prev[curr] !== -1) {
         out.push(curr);
         curr = prev[curr];
     }
 
-    return [source].contaat(out.reverse());
+    return [source].concat(out.reverse());
 }
