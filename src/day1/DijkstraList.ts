@@ -31,6 +31,8 @@ export default function dijkstra_list(
 
     while (hasUnivisited(seen, dists)) {
         const curr = getLowestUnvisited(seen, dists);
+
+        
     }
 
 }
